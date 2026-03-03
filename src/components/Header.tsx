@@ -1,51 +1,50 @@
-import { ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Icon from "@/components/ui/icon";
 
 export function Header() {
   return (
-    <header className="flex items-center justify-between px-8 py-4">
+    <header className="flex items-center justify-between px-8 py-4 border-b border-gray-800/50">
       <div className="flex items-center gap-2">
-        <ФинПотокLogo />
-        <span className="text-lg font-semibold text-white">
-          ФинПоток<sup className="text-xs">™</sup>
+        <CSLogo />
+        <span className="text-lg font-bold text-white">
+          CS<span className="text-violet-400">Stats</span>
         </span>
       </div>
 
-      <nav className="hidden md:flex items-center gap-8">
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-          Продукты
+      <nav className="hidden md:flex items-center gap-6">
+        <a href="#" className="text-sm text-white font-medium transition-colors flex items-center gap-1.5">
+          <Icon name="Trophy" size={14} />
+          Рейтинг
         </a>
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors flex items-center gap-1">
-          Решения <ChevronDown className="h-4 w-4" />
+        <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+          <Icon name="Radio" size={14} />
+          Матчи
         </a>
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-          Ресурсы
+        <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+          <Icon name="Calendar" size={14} />
+          Турниры
         </a>
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-          Тарифы
-        </a>
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-          Контакты
+        <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+          <Icon name="BarChart3" size={14} />
+          Статистика
         </a>
       </nav>
 
-      <Button
-        variant="outline"
-        className="rounded-full border-violet-500 text-violet-400 hover:bg-violet-500/10 hover:text-violet-300 bg-transparent"
-      >
-        Запросить демо
-      </Button>
+      <div className="flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-2 rounded-full bg-[#1a1a2e] px-3 py-1.5">
+          <Icon name="Search" size={14} className="text-gray-500" />
+          <span className="text-xs text-gray-500">Поиск...</span>
+        </div>
+      </div>
     </header>
-  )
+  );
 }
 
-function ФинПотокLogo() {
+function CSLogo() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="8" cy="8" r="3" fill="#8B5CF6" />
-      <circle cx="16" cy="8" r="3" fill="#8B5CF6" opacity="0.6" />
-      <circle cx="8" cy="16" r="3" fill="#8B5CF6" opacity="0.6" />
-      <circle cx="16" cy="16" r="3" fill="#8B5CF6" opacity="0.4" />
-    </svg>
-  )
+    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center">
+      <Icon name="Crosshair" size={16} className="text-white" />
+    </div>
+  );
 }
+
+export default Header;
